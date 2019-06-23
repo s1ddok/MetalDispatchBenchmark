@@ -1,0 +1,18 @@
+PODS:
+  - Alloy (0.10.6):
+    - Alloy/Core (= 0.10.6)
+  - Alloy/Core (0.10.6)
+
+DEPENDENCIES:
+  - Alloy
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alloy
+
+SPEC CHECKSUMS:
+  Alloy: c2b70745738cd64e1f511d05b0da1baf7dc349e6
+
+PODFILE CHECKSUM: b491d80d68a7f8cf70fe6fac0fefbd21d84bad94
+
+COCOAPODS: 1.6.1
