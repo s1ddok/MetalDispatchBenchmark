@@ -91,36 +91,32 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        var top10s = [[(Double, String, MTLSize)]]()
+        // warm-up run
+        _ = self.run()
         
-        for i in 0..<1 {
-            let results = self.run()
-            
-            let normalizedResults = results.map { ($0.0 / results.first!.0, $0.1.pipelineState, $0.1.threadgroupSize) }
-            normalizedResults.forEach { print($0) }
-            
-            print("--- GLOBAL NORMALIZED END")
-            let groupedByThreadgroup = Dictionary(grouping: results) { $0.1.threadgroupSize }
+        let results = self.run()
         
-            for (key, results) in groupedByThreadgroup {
-                print("Best results for key: \(key)")
-                print(results.sorted { $0.0 < $1.0 }.map { ($0.0, $0.1.pipelineState) }[0..<3])
-            }
-            
-            top10s.append(Array(normalizedResults.prefix(10)))
+        let normalizedResults = results.map { ($0.0 / results.first!.0, $0.1.pipelineState, $0.1.threadgroupSize) }
+        normalizedResults.forEach { print($0) }
+        
+        let groupedByThreadgroup = Dictionary(grouping: results) { $0.1.threadgroupSize }
+    
+        for (key, results) in groupedByThreadgroup {
+            print("Best results for key: \(key)")
+            print(results.sorted { $0.0 < $1.0 }.map { ($0.0, $0.1.pipelineState) }[0..<3])
         }
         
-        top10s.forEach {
-            print("--------------------------")
-            $0.forEach { print($0) }
+        let groupedByDispatch = Dictionary(grouping: results) { $0.1.pipelineState}
+        for (key, results) in groupedByDispatch {
+            print("Average results for key: \(key)")
+            print(results.reduce(0.0, { $0 + $1.0 }) / TimeInterval(results.count))
         }
     }
     
-    func run() -> [BenchmarkResult] {
-        let iterations = 400
-        
+    func run(iterations: Int = 400, repeatIterations: Int = 20) -> [BenchmarkResult] {
         var results: [(TimeInterval, Configuration)] = []
-        for _ in 0...20 {
+        
+        for _ in 0..<repeatIterations {
             let possibleDivisors = (0...5).map { Int(pow(2.0, Double($0))) }.shuffled()
             
             for d in possibleDivisors {
@@ -149,8 +145,6 @@ class ViewController: UIViewController {
                 calls.lazy.shuffled().map { $0() }.forEach { results.append(contentsOf: $0) }
             }
         }
-        
-        print("---- TIME END ---")
         
         return results.sorted { $0.0 < $1.0 }
     }
