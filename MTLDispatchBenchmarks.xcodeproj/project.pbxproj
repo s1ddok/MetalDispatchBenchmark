@@ -3,21 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		793ACE25A91FA18C22242463 /* Pods_MTLDispatchBenchmarks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F51789ECAFC1774E0E2A18 /* Pods_MTLDispatchBenchmarks.framework */; };
 		938D9DEB22B210A900D5AC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9DEA22B210A900D5AC9E /* AppDelegate.swift */; };
 		938D9DED22B210A900D5AC9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D9DEC22B210A900D5AC9E /* ViewController.swift */; };
 		938D9DF022B210A900D5AC9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938D9DEE22B210A900D5AC9E /* Main.storyboard */; };
 		938D9DF222B210AA00D5AC9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938D9DF122B210AA00D5AC9E /* Assets.xcassets */; };
 		938D9DF522B210AA00D5AC9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938D9DF322B210AA00D5AC9E /* LaunchScreen.storyboard */; };
 		938D9DFD22B210B800D5AC9E /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 938D9DFC22B210B800D5AC9E /* Shaders.metal */; };
+		93BAA78629637D3500815D59 /* Alloy in Frameworks */ = {isa = PBXBuildFile; productRef = 93BAA78529637D3500815D59 /* Alloy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B537EEC502AC0C1DAD2F273 /* Pods-MTLDispatchBenchmarks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTLDispatchBenchmarks.debug.xcconfig"; path = "Target Support Files/Pods-MTLDispatchBenchmarks/Pods-MTLDispatchBenchmarks.debug.xcconfig"; sourceTree = "<group>"; };
 		938D9DE722B210A900D5AC9E /* MTLDispatchBenchmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTLDispatchBenchmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938D9DEA22B210A900D5AC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938D9DEC22B210A900D5AC9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,8 +25,6 @@
 		938D9DF422B210AA00D5AC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		938D9DF622B210AA00D5AC9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		938D9DFC22B210B800D5AC9E /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		94F51789ECAFC1774E0E2A18 /* Pods_MTLDispatchBenchmarks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTLDispatchBenchmarks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8999E442A8C610769589077 /* Pods-MTLDispatchBenchmarks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTLDispatchBenchmarks.release.xcconfig"; path = "Target Support Files/Pods-MTLDispatchBenchmarks/Pods-MTLDispatchBenchmarks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,26 +32,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				793ACE25A91FA18C22242463 /* Pods_MTLDispatchBenchmarks.framework in Frameworks */,
+				93BAA78629637D3500815D59 /* Alloy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A82DD4F990C755C4B455113 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4B537EEC502AC0C1DAD2F273 /* Pods-MTLDispatchBenchmarks.debug.xcconfig */,
-				A8999E442A8C610769589077 /* Pods-MTLDispatchBenchmarks.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		3054FAEDCAF2A3D35B78B57E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94F51789ECAFC1774E0E2A18 /* Pods_MTLDispatchBenchmarks.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -64,7 +51,6 @@
 			children = (
 				938D9DE922B210A900D5AC9E /* MTLDispatchBenchmarks */,
 				938D9DE822B210A900D5AC9E /* Products */,
-				2A82DD4F990C755C4B455113 /* Pods */,
 				3054FAEDCAF2A3D35B78B57E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -98,17 +84,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 938D9DF922B210AA00D5AC9E /* Build configuration list for PBXNativeTarget "MTLDispatchBenchmarks" */;
 			buildPhases = (
-				F713FCF23ED9952BEB8D3D89 /* [CP] Check Pods Manifest.lock */,
 				938D9DE322B210A900D5AC9E /* Sources */,
 				938D9DE422B210A900D5AC9E /* Frameworks */,
 				938D9DE522B210A900D5AC9E /* Resources */,
-				1F84DD6490EE4ED03CE58ED2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MTLDispatchBenchmarks;
+			packageProductDependencies = (
+				93BAA78529637D3500815D59 /* Alloy */,
+			);
 			productName = MTLDispatchBenchmarks;
 			productReference = 938D9DE722B210A900D5AC9E /* MTLDispatchBenchmarks.app */;
 			productType = "com.apple.product-type.application";
@@ -120,7 +107,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Andrey Volodin";
 				TargetAttributes = {
 					938D9DE622B210A900D5AC9E = {
@@ -137,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 938D9DDE22B210A900D5AC9E;
+			packageReferences = (
+				93BAA78429637D3500815D59 /* XCRemoteSwiftPackageReference "Alloy" */,
+			);
 			productRefGroup = 938D9DE822B210A900D5AC9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,53 +148,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1F84DD6490EE4ED03CE58ED2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MTLDispatchBenchmarks/Pods-MTLDispatchBenchmarks-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alloy/Alloy.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alloy.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MTLDispatchBenchmarks/Pods-MTLDispatchBenchmarks-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F713FCF23ED9952BEB8D3D89 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MTLDispatchBenchmarks-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		938D9DE322B210A900D5AC9E /* Sources */ = {
@@ -265,6 +208,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -326,6 +270,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -357,7 +302,6 @@
 		};
 		938D9DFA22B210AA00D5AC9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B537EEC502AC0C1DAD2F273 /* Pods-MTLDispatchBenchmarks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,7 +321,6 @@
 		};
 		938D9DFB22B210AA00D5AC9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8999E442A8C610769589077 /* Pods-MTLDispatchBenchmarks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -417,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93BAA78429637D3500815D59 /* XCRemoteSwiftPackageReference "Alloy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/s1ddok/Alloy";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93BAA78529637D3500815D59 /* Alloy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93BAA78429637D3500815D59 /* XCRemoteSwiftPackageReference "Alloy" */;
+			productName = Alloy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 938D9DDF22B210A900D5AC9E /* Project object */;
 }
